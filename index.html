@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-  <title>Lukiiy: Apple Catcher 🍎</title>
+  <title>Lukiiy: 🍎 ✋</title>
   <style>
     body {
       color: #ffffff;
@@ -158,7 +158,7 @@
     <noscript>Enable JavaScript</noscript>
     <h1 class="loading-text">Loading</h1>
     
-    
+    <div class="progress-bar-outer"><div class="progress-bar-inner" id="loading-inner"></div></div>
   </div>
 
   <div id="error" class="screen" hidden>
@@ -218,7 +218,7 @@
       scaffolding.setUsername("Player####".replace(/#/g, () => Math.floor(Math.random() * 10)));
       scaffolding.setAccentColor("#ff4c4c");
 
-      scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Apple Catcher v2 backup.sb3"));
+      scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Apple Catcher v2.4 BACKUP.sb3"));
 
       vm.setTurboMode(false);
       if (vm.setInterpolation) vm.setInterpolation(false);
