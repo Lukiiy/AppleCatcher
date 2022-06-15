@@ -200,7 +200,7 @@
       scaffolding.width = 480;
       scaffolding.height = 360;
       scaffolding.resizeMode = "preserve-ratio";
-      scaffolding.editableLists = true;
+      scaffolding.editableLists = false;
       scaffolding.setup();
       scaffolding.appendTo(appElement);
 
@@ -215,10 +215,10 @@
         videoProvider: vm.runtime.ioDevices.video.provider
       };
 
-      scaffolding.setUsername("player####".replace(/#/g, () => Math.floor(Math.random() * 10)));
+      scaffolding.setUsername("Player####".replace(/#/g, () => Math.floor(Math.random() * 10)));
       scaffolding.setAccentColor("#ff4c4c");
 
-      scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Apple Catcher v2.4 Final.sb3"));
+      scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Apple Catcher v2.4 Finalv2lol.sb3"));
 
       vm.setTurboMode(false);
       if (vm.setInterpolation) vm.setInterpolation(false);
