@@ -1,6 +1,6 @@
-# AppleCatcher
-Simple Apple Catcher, why? idek
-You can play at [my website](https://lukiiy.github.io/applecatcher/)!
+# Apple Catcher
+Simple Apple Catcher, why? idek  
+You can play at [my website](https://lukiiy.github.io/applecatcher/)!  
 _Hav a good day._
 
 ## Updates
