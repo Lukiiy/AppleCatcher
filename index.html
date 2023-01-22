@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- We only include this to explicitly loosen the CSP of various packager environments. It does not provide any security. -->
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-  <title>Luk: 🍎✋ [v2.5]</title>
+  <title>Luk: 🍎✋ [v3]</title>
   <style>
     body {
       color: #ffffff;
@@ -18,7 +16,7 @@
       padding: 0;
     }
     :root, body.is-fullscreen {
-      background-color: #161616;
+      background-color: #212121;
     }
     [hidden] {
       display: none !important;
@@ -48,7 +46,7 @@
       cursor: default;
       user-select: none;
       -webkit-user-select: none;
-      background-color: #161616;
+      background-color: #212121;
     }
     #launch {
       background-color: rgba(0, 0, 0, 0.7);
@@ -65,9 +63,6 @@
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
-    }
-    #loading {
-      
     }
     .progress-bar-outer {
       border: 1px solid currentColor;
@@ -135,18 +130,18 @@
       cursor: auto;
     }
     .sc-monitor-root[opcode^="data_"] .sc-monitor-value-color {
-      background-color: #161616;
+      background-color: #000000;
     }
     .sc-monitor-row-value-outer {
-      background-color: #fc662c;
+      background-color: #000000;
     }
     .sc-monitor-row-value-editing .sc-monitor-row-value-outer {
-      background-color: #e25b27;
+      background-color: #000000;
     }
     
   </style>
-  <meta name="theme-color" content="#161616">
-  
+  <meta name="theme-color" content="#212121">
+  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAALpJREFUaIHtmTEKg0AQRd0QCHuKNFsEbNN7W2/gYQTr5AIxlskNZopRngP/tersPAb+oJYO5jHef5HnL3s1QiEBGgnQSICmHH3AMD/NnP+8VrOH9f0166efgARoJEAjAZrwHpj63sz5Vmv0CLPH9BOQAI0EaCRA4+6Bo3N+2Tbzulc//QQkQCMBGgnQXL0bvByO5ni0fvoJSIBGAjQSoHH3QOe8M7RaQ/95vZy/laLvQqdGAjQSoEkv8AcVGxv7ss6yAwAAAABJRU5ErkJggg==">
 </head>
 <body>
   <div id="app"></div>
@@ -204,10 +199,11 @@
       setProgress(0.1);
 
       const scaffolding = new Scaffolding.Scaffolding();
-      scaffolding.width = 480;
+      scaffolding.width = 640;
       scaffolding.height = 360;
       scaffolding.resizeMode = "preserve-ratio";
       scaffolding.editableLists = false;
+      scaffolding.usePackagedRuntime = true;
       scaffolding.setup();
       scaffolding.appendTo(appElement);
 
@@ -225,15 +221,15 @@
       scaffolding.setUsername("p####".replace(/#/g, () => Math.floor(Math.random() * 10)));
       scaffolding.setAccentColor("#ff4c4c");
 
-      scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Apple Catcher v2.5.sb3"));
+      scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@Apple Catcher 2.sb3"));
 
       vm.setTurboMode(false);
-      if (vm.setInterpolation) vm.setInterpolation(false);
+      if (vm.setInterpolation) vm.setInterpolation(true);
       if (vm.setFramerate) vm.setFramerate(45);
       if (vm.renderer.setUseHighQualityRender) vm.renderer.setUseHighQualityRender(false);
       if (vm.setRuntimeOptions) vm.setRuntimeOptions({
         fencing: true,
-        miscLimits: true,
+        miscLimits: false,
         maxClones: 300,
       });
       if (vm.setCompilerOptions) vm.setCompilerOptions({
@@ -242,7 +238,7 @@
       });
 
       if (typeof ScaffoldingAddons !== 'undefined') {
-        ScaffoldingAddons.run(scaffolding, {"gamepad":true,"pointerlock":false,"specialCloudBehaviors":false,"unsafeCloudBehaviors":false,"pause":false});
+        ScaffoldingAddons.run(scaffolding, {"gamepad":false,"pointerlock":false,"specialCloudBehaviors":false,"unsafeCloudBehaviors":false,"pause":false});
       }
 
       for (const extension of []) {
