@@ -23,3 +23,8 @@ _Hav a good day._
 + Removed Basket PowerUps
 + Remade some sound effects
 + Big screen now
+
+### **3.1**: _23/01/23_
+
++ Added Proper Mobile Support
++ Added Game Over Retry Text
